@@ -19,6 +19,11 @@ contract('WGooD test', async ([alice, bob, minter]) => {
 
     describe('deposit native GooD to earn WGooD', () => {
         it('Alice deposits 1 native GooD by deposit', async () => {
+            assert.equal(
+                fromWei(await wgood.totalSupply()),
+                '0'
+            )
+
             const depositAmount = toWei('1')
             let tx = await wgood.deposit(
                 { from: alice, value: depositAmount }
@@ -36,6 +41,11 @@ contract('WGooD test', async ([alice, bob, minter]) => {
 
             assert.equal(
                 fromWei(await wgood.balanceOf(alice)),
+                '1'
+            )
+
+            assert.equal(
+                fromWei(await wgood.totalSupply()),
                 '1'
             )
         })
@@ -58,6 +68,11 @@ contract('WGooD test', async ([alice, bob, minter]) => {
 
             assert.equal(
                 fromWei(await wgood.balanceOf(alice)),
+                '2'
+            )
+
+            assert.equal(
+                fromWei(await wgood.totalSupply()),
                 '2'
             )
         })
@@ -90,6 +105,11 @@ contract('WGooD test', async ([alice, bob, minter]) => {
 
             assert.equal(
                 fromWei(await wgood.balanceOf(alice)),
+                '0'
+            )
+
+            assert.equal(
+                fromWei(await wgood.totalSupply()),
                 '0'
             )
         })
