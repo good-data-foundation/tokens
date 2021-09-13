@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract BGooD is ERC20, ERC20Burnable, Ownable {
     uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** 18);
 
-    constructor() ERC20("BSC GooD", "BGooD") {
+    constructor() ERC20("Binance GooD", "BGooD") {
         _mint(_msgSender(), INITIAL_SUPPLY);
     }
 
