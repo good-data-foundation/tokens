@@ -1,0 +1,10 @@
+/node_modules/
+/build/
+/file/
+node_modules
+
+#Buidler files
+cache
+artifacts
+coverage
+coverage.json
